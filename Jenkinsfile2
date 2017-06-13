@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    environment {
+        SYMFONY_ENV = 'prod'
+    }
+
+    stages {
+        stage('Build application'){
+            steps{
+                sh 'composer install --ignore-platform-reqs -n'
+            }
+        }
+
+        stage('Deploy application'){
+            steps{
+                sh 'ansible-playbook -i hosts deploy.yml'
+            }
+        }
+    }
+}
