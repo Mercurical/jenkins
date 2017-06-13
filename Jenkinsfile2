@@ -19,7 +19,7 @@ pipeline {
 
         stage('Deploy application'){
             steps{
-                sh 'ansible-playbook -i hosts deploy.yml'
+                sh 'ansible-playbook -i hosts deploy.yml -vvv'
             }
         }
     }
