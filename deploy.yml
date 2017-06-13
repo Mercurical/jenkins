@@ -5,14 +5,12 @@
     php_version: "7.0"
     symfony_env: prod
     ansistrano_deploy_to: "/usr/home/Arti222/domains/Arti222.usermd.net/public_html"
-    ansistrano_deploy_from: "{{ playbook_dir }}/testowa.tar"
-    ansistrano_deploy_via: "copy_unarchive"
-    ansistrano_archived_file: "testowa.tar"
+    ansistrano_deploy_from: "{{ playbook_dir }}"
+    ansistrano_deploy_via: "git"
+    ansistrano_version_dir: "releases"
     ansistrano_allow_anonymous_stats: no
     ansistrano_keep_releases: 5
-    ansistrano_rsync_set_remote_user: Arti222
-    ansistrano_shared_paths:
-      - app/cache
-      - app/logs
+    ansistrano_git_repo: git@github.com:Mercurical/jenkins.git
+    ansistrano_git_branch: master
   roles:
     - { role: carlosbuenosvinos.ansistrano-deploy }
