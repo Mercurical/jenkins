@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage('Build environment'){
+            steps{
+                sh 'ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --ignore-certs --roles-path ./roles'
+            }
+        }
         stage('Build application'){
             steps{
                 sh 'composer install --ignore-platform-reqs -n'
