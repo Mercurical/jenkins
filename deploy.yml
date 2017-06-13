@@ -1,6 +1,6 @@
 ---
 - name: Deploy last wishes app to my server
-- hosts: localhost
+  hosts: localhost
   connection: local
   vars:
     php_version: "7.0"
