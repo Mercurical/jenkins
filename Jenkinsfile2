@@ -6,7 +6,11 @@ pipeline {
     }
 
     stages {
-
+        stage('Build environment'){
+            steps{
+                sh 'source /usr/home/Arti222/.virtualenvs/pajton/bin/activate'
+            }
+        }
         stage('Build application'){
             steps{
                 sh 'composer install --ignore-platform-reqs -n'
