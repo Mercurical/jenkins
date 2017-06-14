@@ -9,6 +9,13 @@ pipeline {
         stage('Build environment'){
             steps{
                 sh 'echo "hehehehe"'
+                sh 'VIRTUAL_ENV="/usr/home/Arti222/.virtualenvs/pajton"'
+                sh 'export VIRTUAL_ENV'
+
+                sh '_OLD_VIRTUAL_PATH="$PATH"'
+                sh 'PATH="$VIRTUAL_ENV/bin:$PATH"'
+                sh 'export PATH'
+                sh 'hash -r 2>/dev/null'
             }
         }
         stage('Build application'){
