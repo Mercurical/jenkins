@@ -8,14 +8,9 @@ pipeline {
     stages {
         stage('Build environment'){
             steps{
-                sh 'echo "hehehehe"'
-                sh 'VIRTUAL_ENV="/usr/home/Arti222/.virtualenvs/pajton"'
-                sh 'export VIRTUAL_ENV'
-
-                sh '_OLD_VIRTUAL_PATH="$PATH"'
-                sh 'PATH="$VIRTUAL_ENV/bin:$PATH"'
-                sh 'export PATH'
+                sh 'export PATH=/usr/home/Arti222/.virtualenvs/pajton/bin:/usr/local/devil/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin:/home/Arti222/bin'
                 sh 'hash -r 2>/dev/null'
+                sh 'echo $PATH'
             }
         }
         stage('Build application'){
