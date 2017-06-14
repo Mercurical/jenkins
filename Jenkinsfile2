@@ -19,6 +19,7 @@ pipeline {
 
         stage('Deploy application'){
             steps{
+                sh 'source /usr/home/Arti222/.virtualenvs/pajton/bin/activate'
                 sh 'ansible-playbook -i hosts deploy.yml -vvv'
             }
         }
