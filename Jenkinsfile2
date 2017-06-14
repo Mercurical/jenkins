@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('Build environment'){
             steps{
-                sh 'source /usr/home/Arti222/.virtualenvs/pajton/bin/activate'
                 sh 'echo "hehehehe"'
             }
         }
